@@ -13,7 +13,7 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
+ 
         :root {
             --primary-dark: #1a1a2e;
             --secondary-dark: #16213e;
@@ -23,40 +23,42 @@
             --text-gray: #bbbbbb;
             --card-bg: rgba(255, 255, 255, 0.05);
             --border-color: rgba(255, 255, 255, 0.1);
+            --gold: #d4af37;
+            --gold-glow: rgba(212, 175, 55, 0.25);
         }
-
+ 
         html {
             scroll-behavior: smooth;
         }
-
+ 
         body {
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
             color: var(--text-light);
             line-height: 1.6;
             overflow-x: hidden;
         }
-
+ 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-
+ 
         section {
             padding: 100px 0;
             position: relative;
         }
-
+ 
         h1, h2, h3 {
             margin-bottom: 20px;
             font-weight: 600;
         }
-
+ 
         h1 {
             font-size: 3.5rem;
             color: var(--light-blue);
         }
-
+ 
         h2 {
             font-size: 2.5rem;
             text-align: center;
@@ -64,7 +66,7 @@
             position: relative;
             color: var(--light-blue);
         }
-
+ 
         h2::after {
             content: '';
             position: absolute;
@@ -76,14 +78,14 @@
             background: var(--light-blue);
             border-radius: 2px;
         }
-
+ 
         p {
             margin-bottom: 20px;
             font-size: 1.1rem;
             line-height: 1.8;
             color: var(--text-gray);
         }
-
+ 
         .btn {
             display: inline-block;
             background: var(--accent-blue);
@@ -97,24 +99,24 @@
             cursor: pointer;
             font-size: 1rem;
         }
-
+ 
         .btn:hover {
             background: var(--light-blue);
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
-
+ 
         .btn-outline {
             background: transparent;
             border: 2px solid var(--light-blue);
             color: var(--light-blue);
         }
-
+ 
         .btn-outline:hover {
             background: var(--light-blue);
             color: var(--primary-dark);
         }
-
+ 
         /* Header Styles */
         header {
             background: rgba(26, 26, 46, 0.95);
@@ -125,14 +127,14 @@
             border-bottom: 1px solid var(--border-color);
             backdrop-filter: blur(10px);
         }
-
+ 
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
         }
-
+ 
         .logo {
             font-size: 28px;
             font-weight: 700;
@@ -141,16 +143,16 @@
             align-items: center;
             gap: 10px;
         }
-
+ 
         .nav-links {
             display: flex;
             list-style: none;
         }
-
+ 
         .nav-links li {
             margin-left: 30px;
         }
-
+ 
         .nav-links a {
             text-decoration: none;
             color: var(--text-light);
@@ -159,7 +161,7 @@
             padding: 10px 0;
             position: relative;
         }
-
+ 
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -170,53 +172,57 @@
             background: var(--light-blue);
             transition: width 0.3s ease;
         }
-
+ 
         .nav-links a:hover::after {
             width: 100%;
         }
-
+ 
         .nav-links a:hover {
             color: var(--light-blue);
         }
-
+ 
         .menu-toggle {
             display: none;
             font-size: 24px;
             cursor: pointer;
             color: var(--light-blue);
         }
-
+ 
         /* Hero Section */
         .hero {
             padding: 200px 0 150px;
             text-align: center;
             position: relative;
         }
-
+ 
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
         }
-
+ 
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 15px;
         }
-
+ 
         .hero h2 {
             font-size: 1.8rem;
             color: var(--light-blue);
             margin-bottom: 10px;
             font-weight: 400;
         }
-
+ 
+        .hero h2::after {
+            display: none;
+        }
+ 
         .hero h3 {
             font-size: 1.4rem;
             color: var(--text-gray);
             margin-bottom: 30px;
             font-weight: 400;
         }
-
+ 
         .profile-img {
             width: 200px;
             height: 200px;
@@ -228,43 +234,44 @@
             align-items: center;
             justify-content: center;
             background-color: rgba(255, 255, 255, 0.05);
+            overflow: hidden;
         }
-
+ 
         .profile-img i {
             font-size: 80px;
             color: var(--text-light);
         }
-
+ 
         .btn-group {
             display: flex;
             gap: 20px;
             justify-content: center;
             margin-top: 30px;
         }
-
+ 
         /* About Section */
         .about-content {
             display: flex;
             align-items: center;
             gap: 60px;
         }
-
+ 
         .about-text {
             flex: 1;
         }
-
+ 
         .about-image {
             flex: 1;
             text-align: center;
         }
-
+ 
         /* Skills Section */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 30px;
         }
-
+ 
         .skill-card {
             background: var(--card-bg);
             padding: 40px 30px;
@@ -273,25 +280,25 @@
             transition: all 0.3s ease;
             border: 1px solid var(--border-color);
         }
-
+ 
         .skill-card:hover {
             transform: translateY(-5px);
             border-color: var(--light-blue);
         }
-
+ 
         .skill-card i {
             font-size: 50px;
             color: var(--light-blue);
             margin-bottom: 20px;
         }
-
+ 
         /* Projects Section */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 30px;
         }
-
+ 
         .project-card {
             background: var(--card-bg);
             border-radius: 8px;
@@ -299,12 +306,12 @@
             transition: all 0.3s ease;
             border: 1px solid var(--border-color);
         }
-
+ 
         .project-card:hover {
             transform: translateY(-5px);
             border-color: var(--light-blue);
         }
-
+ 
         .project-img {
             height: 200px;
             background: var(--secondary-dark);
@@ -312,23 +319,23 @@
             align-items: center;
             justify-content: center;
         }
-
+ 
         .project-img i {
             font-size: 60px;
             color: var(--text-light);
         }
-
+ 
         .project-content {
             padding: 25px;
         }
-
+ 
         .project-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             margin-top: 15px;
         }
-
+ 
         .tag {
             background: rgba(50, 130, 184, 0.2);
             padding: 5px 15px;
@@ -337,100 +344,420 @@
             color: var(--light-blue);
             border: 1px solid var(--light-blue);
         }
-
-
-         /* Certificates Section */
+ 
+        /* Certificates Section */
+        .cert-subheading {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 50px 0 30px;
+        }
+ 
+        .cert-subheading:first-of-type {
+            margin-top: 0;
+        }
+ 
+        .cert-subheading h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0;
+            white-space: nowrap;
+        }
+ 
+        .cert-subheading .line {
+            height: 1px;
+            flex: 1;
+            background: var(--border-color);
+        }
+ 
+        .cert-subheading.achievement h3 {
+            color: var(--gold);
+        }
+ 
+        .cert-subheading.completion h3 {
+            color: var(--light-blue);
+        }
+ 
         .certificates-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
+            margin-bottom: 20px;
         }
-
+ 
         .certificate-card {
             background: var(--card-bg);
             border-radius: 8px;
             overflow: hidden;
             transition: all 0.3s ease;
             border: 1px solid var(--border-color);
+            position: relative;
         }
-
+ 
         .certificate-card:hover {
             transform: translateY(-5px);
         }
-
+ 
+        .certificate-card.is-achievement {
+            border-color: rgba(212, 175, 55, 0.4);
+        }
+ 
+        .certificate-card.is-achievement:hover {
+            border-color: var(--gold);
+            box-shadow: 0 10px 25px var(--gold-glow);
+        }
+ 
+        .certificate-card.is-completion:hover {
+            border-color: var(--light-blue);
+        }
+ 
+        .cert-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            z-index: 2;
+        }
+ 
+        .cert-badge.win {
+            background: var(--gold);
+            color: var(--primary-dark);
+        }
+ 
+        .cert-badge.done {
+            background: rgba(50, 130, 184, 0.9);
+            color: white;
+        }
+ 
         .certificate-img {
             height: 200px;
             background: var(--secondary-dark);
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
         }
-
+ 
         .certificate-img i {
             font-size: 60px;
             color: var(--text-light);
         }
-
+ 
+        .certificate-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+ 
         .certificate-content {
             padding: 25px;
         }
-
+ 
+        .certificate-content .issuer {
+            color: var(--light-blue);
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+ 
+        .certificate-content .cert-date {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+ 
         /* Resume Section */
+        .resume-intro {
+            text-align: center;
+            max-width: 650px;
+            margin: -30px auto 60px;
+            color: var(--text-gray);
+        }
+ 
         .resume-content {
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+ 
+        .resume-panel {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 35px;
+            margin-bottom: 30px;
+        }
+ 
+        .resume-panel-title {
             display: flex;
-            gap: 60px;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.3rem;
+            color: var(--light-blue);
+            margin-bottom: 30px;
         }
-
-        .resume-left, .resume-right {
-            flex: 1;
+ 
+        .resume-panel-title i {
+            width: 38px;
+            height: 38px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background: rgba(50, 130, 184, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
         }
-
-        .resume-section {
-            margin-bottom: 40px;
+ 
+        .resume-panel-title.gold {
+            color: var(--gold);
         }
-
-        .resume-item {
-            margin-bottom: 25px;
-            padding-bottom: 25px;
+ 
+        .resume-panel-title.gold i {
+            background: var(--gold-glow);
+        }
+ 
+        /* Timeline (education) */
+        .timeline {
+            position: relative;
+            padding-left: 26px;
+        }
+ 
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 6px;
+            bottom: 6px;
+            width: 2px;
+            background: var(--border-color);
+        }
+ 
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+ 
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+ 
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary-dark);
+            border: 2px solid var(--light-blue);
+        }
+ 
+        .timeline-item h4 {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            margin-bottom: 3px;
+        }
+ 
+        .timeline-item .t-org {
+            color: var(--light-blue);
+            font-size: 0.92rem;
+            margin-bottom: 4px;
+        }
+ 
+        .timeline-item .t-date {
+            display: inline-block;
+            color: var(--text-gray);
+            font-size: 0.78rem;
+            font-style: italic;
+            letter-spacing: 0.3px;
+            margin-bottom: 6px;
+        }
+ 
+        .timeline-item p {
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+            color: var(--text-gray);
+        }
+ 
+        /* Skill pills */
+        .skill-pill-group {
+            margin-bottom: 20px;
+        }
+ 
+        .skill-pill-group:last-child {
+            margin-bottom: 0;
+        }
+ 
+        .skill-pill-group .pill-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-gray);
+            margin-bottom: 10px;
+        }
+ 
+        .pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+ 
+        .pill {
+            background: rgba(50, 130, 184, 0.12);
+            border: 1px solid rgba(50, 130, 184, 0.35);
+            color: var(--light-blue);
+            font-size: 0.82rem;
+            padding: 6px 14px;
+            border-radius: 20px;
+        }
+ 
+        /* Resume project mini-cards */
+        .resume-project {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 18px 20px;
+            margin-bottom: 16px;
+            transition: border-color 0.25s ease;
+        }
+ 
+        .resume-project:last-child {
+            margin-bottom: 0;
+        }
+ 
+        .resume-project:hover {
+            border-color: var(--light-blue);
+        }
+ 
+        .resume-project h4 {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 10px;
+        }
+ 
+        .resume-project h4 span {
+            font-size: 0.72rem;
+            color: var(--text-gray);
+            font-weight: 400;
+            white-space: nowrap;
+        }
+ 
+        .resume-project p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+            color: var(--text-gray);
+        }
+ 
+        /* Achievement badges */
+        .achievement-badge {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 16px 0;
             border-bottom: 1px solid var(--border-color);
         }
-
-        .resume-item:last-child {
+ 
+        .achievement-badge:last-child {
             border-bottom: none;
+            padding-bottom: 0;
         }
-
-        .resume-item h3 {
-            margin-bottom: 5px;
-            color: var(--light-blue);
+ 
+        .achievement-badge:first-child {
+            padding-top: 0;
         }
-
-        .resume-item .date {
+ 
+        .achievement-badge i {
+            width: 34px;
+            height: 34px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background: var(--gold-glow);
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+ 
+        .achievement-badge h4 {
+            font-size: 0.98rem;
+            color: var(--text-light);
+            margin-bottom: 3px;
+        }
+ 
+        .achievement-badge p {
+            font-size: 0.88rem;
+            margin-bottom: 0;
             color: var(--text-gray);
-            font-weight: 500;
-            margin-bottom: 10px;
-            font-style: italic;
         }
-
+ 
+        /* Compact certification list */
+        .cert-mini-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 20px;
+        }
+ 
+        .cert-mini-list li {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+ 
+        .cert-mini-list li i {
+            color: var(--light-blue);
+            font-size: 11px;
+        }
+ 
+        .cert-mini-list li b {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+ 
+        @media (max-width: 992px) {
+            .resume-content {
+                grid-template-columns: 1fr;
+            }
+ 
+            .cert-mini-list {
+                grid-template-columns: 1fr;
+            }
+        }
+ 
         /* Contact Section */
         .contact-content {
             display: flex;
             gap: 60px;
         }
-
+ 
         .contact-info {
             flex: 1;
         }
-
+ 
         .contact-form {
             flex: 1;
         }
-
+ 
         .contact-item {
             display: flex;
             align-items: center;
             margin-bottom: 30px;
         }
-
+ 
         .contact-item i {
             width: 50px;
             height: 50px;
@@ -443,18 +770,18 @@
             color: white;
             font-size: 18px;
         }
-
+ 
         .form-group {
             margin-bottom: 25px;
         }
-
+ 
         .form-group label {
             display: block;
             margin-bottom: 10px;
             font-weight: 500;
             color: var(--light-blue);
         }
-
+ 
         .form-control {
             width: 100%;
             padding: 15px 20px;
@@ -465,17 +792,17 @@
             transition: all 0.3s;
             color: var(--text-light);
         }
-
+ 
         .form-control:focus {
             border-color: var(--light-blue);
             outline: none;
         }
-
+ 
         textarea.form-control {
             min-height: 150px;
             resize: vertical;
         }
-
+ 
         /* Footer */
         footer {
             background: rgba(10, 14, 41, 0.9);
@@ -483,13 +810,13 @@
             padding: 60px 0 20px;
             border-top: 1px solid var(--border-color);
         }
-
+ 
         .footer-content {
             display: flex;
             justify-content: space-between;
             margin-bottom: 40px;
         }
-
+ 
         .footer-logo {
             font-size: 28px;
             font-weight: 700;
@@ -499,13 +826,13 @@
             align-items: center;
             gap: 10px;
         }
-
+ 
         .social-links {
             display: flex;
             gap: 15px;
             margin-top: 20px;
         }
-
+ 
         .social-links a {
             display: flex;
             align-items: center;
@@ -518,12 +845,12 @@
             transition: all 0.3s ease;
             border: 1px solid var(--border-color);
         }
-
+ 
         .social-links a:hover {
             background: var(--light-blue);
             transform: translateY(-3px);
         }
-
+ 
         .copyright {
             text-align: center;
             padding-top: 20px;
@@ -531,23 +858,23 @@
             color: var(--text-gray);
             font-size: 14px;
         }
-
+ 
         /* Responsive Styles */
         @media (max-width: 992px) {
             .about-content, .resume-content, .contact-content {
                 flex-direction: column;
             }
-            
+ 
             .about-image {
                 order: -1;
             }
         }
-
+ 
         @media (max-width: 768px) {
             .menu-toggle {
                 display: block;
             }
-            
+ 
             .nav-links {
                 position: fixed;
                 top: 80px;
@@ -559,52 +886,56 @@
                 transition: 0.3s;
                 padding: 30px 0;
             }
-            
+ 
             .nav-links.active {
                 left: 0;
             }
-            
+ 
             .nav-links li {
                 margin: 15px 0;
             }
-            
+ 
             .hero h1 {
                 font-size: 2.5rem;
             }
-            
+ 
             .btn-group {
                 flex-direction: column;
                 align-items: center;
             }
-            
+ 
             .btn {
                 width: 80%;
                 text-align: center;
             }
-            
+ 
             .footer-content {
                 flex-direction: column;
                 gap: 30px;
             }
-            
+ 
             .social-links {
                 justify-content: center;
             }
+ 
+            .cert-subheading h3 {
+                font-size: 1.3rem;
+            }
         }
-
+ 
         @media (max-width: 576px) {
             section {
                 padding: 80px 0;
             }
-            
+ 
             h1 {
                 font-size: 2.5rem;
             }
-            
+ 
             h2 {
                 font-size: 2rem;
             }
-            
+ 
             .projects-grid, .skills-grid, .certificates-grid, .blog-grid {
                 grid-template-columns: 1fr;
             }
@@ -635,12 +966,13 @@
             </nav>
         </div>
     </header>
-
+ 
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="profile-img">
+                <div class="profile-img" style="width: 250px; height: 250px;">
+                    <img src="image/download (1).jpg" style="width: 200%; height: 200%; border-radius: 50%; object-fit: cover;">
                     <i class="fas fa-user"></i>
                 </div>
                 <h1>Abinaya</h1>
@@ -655,7 +987,7 @@
             </div>
         </div>
     </section>
-
+ 
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
@@ -673,15 +1005,13 @@
                 </div>
                 <div class="about-image">
                     <div class="profile-img" style="width: 250px; height: 250px;">
-                        <img src="WhatsApp Image 2025-12-04 at 14.57.07_aee5f12c.jpg"   style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
-                    </div>
-                        <i class="fas fa-laptop-code"></i>
+                        <img src="image/download (1).jpg" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
+ 
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
@@ -710,7 +1040,7 @@
                 <div class="skill-card">
                     <i class="fab fa-js-square"></i>
                     <h3>UnityHub</h3>
-                    <p>As a game development enthusiast, I utilize Unity Hub for efficient project management and version control. My workflow includes:</p>
+                    <p>As a game development enthusiast, I utilize Unity Hub for efficient project management and version control.</p>
                 </div>
                 <div class="skill-card">
                     <i class="fas fa-database"></i>
@@ -725,358 +1055,664 @@
             </div>
         </div>
     </section>
-
+ 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2>My Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-img">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Portfolio Website</h3>
-                        <p>A responsive portfolio website built with HTML, CSS, and JavaScript to showcase my projects and skills.</p>
-                        <div class="project-tags">
-                            <span class="tag">HTML</span>
-                            <span class="tag">C</span>
-                            <span class="tag">JavaScript</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Product Recommendation  System</h3>
-                        <p>A Machine Learning-Based System That Recommends Product Based On User Interest And Interactions.</p>
-                        <div class="project-tags">
-                            <span class="tag">c,JavaScript</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">ML</span>
-                        </div>
-                    </div>
-                </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-   
-   <section id="certificates" class="certificates">
+   <!-- Projects Section -->
+<section id="projects" class="projects">
     <div class="container">
-        <h2 style="text-align: center;">CERTIFICATIONS</h2>
-        <div class="certificates-grid">
+        <h2>My Projects</h2>
 
-            <div class="certificate-card">
-                <div class="certificate-img"><i class="fas fa-award"></i></div>
-                <div class="certificate-content">
-                    <h3>Python Programming</h3>
-                    <p>GreatLearning</p>
-                    <a href="image/python%20certificate.jpeg" target="_blank">
-                        <img src="image/python%20certificate.jpeg" alt="Python Certificate" style="width: 100%; height: 100%; object-fit: contain;">
-                    </a>
-                    <p>Comprehensive introduction to Python programming and applications.</p>
+        <div class="projects-grid">
+
+            <!-- Password Spray Detection -->
+            <div class="project-card">
+                <div class="project-img">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+
+                <div class="project-content">
+                    <h3>Password Spray Detection System</h3>
+
+                    <p>
+                        Developed a cloud security monitoring system to detect password spray attacks by analyzing login attempts across multiple user accounts. The system identifies suspicious authentication patterns from the same IP address, detects anomaly behavior, and generates real-time security alerts to prevent unauthorized access.
+                    </p>
+
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Cloud Security</span>
+                        <span class="tag">AWS</span>
+                        <span class="tag">Cybersecurity</span>
+                        <span class="tag">Machine Learning</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="certificate-card">
-                <div class="certificate-img"><i class="fas fa-award"></i></div>
-                <div class="certificate-content">
-                    <h3>Phishing Attacks</h3>
-                    <p>Vodafone Idea Foundation</p>
-                    <a href="image/phising%20attact%20cer.jpeg" target="_blank">
-                        <img src="image/phising%20attact%20cer.jpeg" alt="Phishing Certificate" style="width: 100%; height: 100%; object-fit: contain;">
-                    </a>
-                    <p>Learned about phishing techniques and how to prevent cyber attacks.</p>
+            <!-- Product Recommendation -->
+            <div class="project-card">
+                <div class="project-img">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+
+                <div class="project-content">
+                    <h3>Product Recommendation System</h3>
+
+                    <p>
+                        Built a machine learning-based recommendation system that suggests personalized products using collaborative and content-based filtering techniques. Developed an interactive web application that improves recommendation accuracy based on user preferences and purchase history.
+                    </p>
+
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Scikit-Learn</span>
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">Pandas</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="certificate-card">
-                <div class="certificate-img"><i class="fas fa-award"></i></div>
-                <div class="certificate-content">
-                    <h3>Diploma in Computer Application</h3>
-                    <p>Gramimum Institute</p>
-                    <a href="image/dca.jpeg" target="_blank">
-                        <img src="image/dca.jpeg" alt="DCA Certificate" style="width: 100%; height: 100%; object-fit: contain;">
-                    </a>
-                    <p>Learned MS Word, Excel, PowerPoint and basic computer skills.</p>
+            <!-- Cyber Shield -->
+            <div class="project-card">
+                <div class="project-img">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+
+                <div class="project-content">
+                    <h3>Cyber Shield – Web Vulnerability Scanner</h3>
+
+                    <p>
+                        Developed a web vulnerability scanner to identify common security vulnerabilities such as SQL Injection, Cross-Site Scripting (XSS), and open ports. The application provides detailed security reports and remediation suggestions through a user-friendly dashboard.
+                    </p>
+
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Flask</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="certificate-card">
-                <div class="certificate-img"><i class="fas fa-award"></i></div>
-                <div class="certificate-content">
-                    <h3>Green India Mission</h3>
-                    <p>The Institution of Engineering</p>
-                    <a href="image/poster%20making%20cer.jpeg" target="_blank">
-                        <img src="image/poster%20making%20cer.jpeg" alt="Green India Certificate" style="width: 100%; height: 100%; object-fit: contain;">
-                    </a>
-                    <p>Smart irrigation systems for sustainable water management.</p>
+            <!-- Deepfake Detection -->
+            <div class="project-card">
+                <div class="project-img">
+                    <i class="fas fa-video"></i>
+                </div>
+
+                <div class="project-content">
+                    <h3>AI-Based Deepfake Detection System</h3>
+
+                    <p>
+                        Developed an AI-powered web application to detect manipulated images and videos using TensorFlow and OpenCV. The system performs image forensic analysis and supports future enhancements including webcam analysis, voice-clone detection, and KYC verification.
+                    </p>
+
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">OpenCV</span>
+                        <span class="tag">Flask</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="certificate-card">
-                <div class="certificate-img"><i class="fas fa-award"></i></div>
-                <div class="certificate-content">
-                    <h3>Women Hackathon</h3>
-                    <p>Shooting Stars Foundation</p>
-                    <a href="image/hackthon.jpeg" target="_blank">
-                        <img src="image/hackthon.jpeg" alt="Hackathon Certificate" style="width: 100%; height: 100%; object-fit: contain;">
-                    </a>
-                    <p>Participated in hackathon and built innovative solutions.</p>
+            <!-- Portfolio -->
+            <div class="project-card">
+                <div class="project-img">
+                    <i class="fas fa-laptop-code"></i>
                 </div>
-            </div>
 
-            <div class="certificate-card">
-                <div class="certificate-img"><i class="fas fa-award"></i></div>
-                <div class="certificate-content">
-                    <h3>Creativity Tutorial</h3>
-                    <p>GCFGlobal</p>
-                    <a href="image/creativity%20tutorial%20cer.jpeg" target="_blank">
-                        <img src="image/creativity%20tutorial%20cer.jpeg" alt="Creativity Certificate" style="width: 100%; height: 100%; object-fit: contain;">
-                    </a>
-                    <p>Improved creativity and idea generation skills.</p>
-                </div>
-            </div>
+                <div class="project-content">
+                    <h3>Personal Portfolio Website</h3>
 
-            <div class="certificate-card">
-                <div class="certificate-img"><i class="fas fa-award"></i></div>
-                <div class="certificate-content">
-                    <h3>Graphic Design</h3>
-                    <p>Mind Luster</p>
-                    <a href="image/graphic%20design%20cer.jpeg" target="_blank">
-                        <img src="image/graphic%20design%20cer.jpeg" alt="Design Certificate" style="width: 100%; height: 100%; object-fit: contain;">
-                    </a>
-                    <p>Learned basics of graphic design and visual creativity.</p>
-                </div>
-            </div>
+                    <p>
+                        Designed and developed a fully responsive personal portfolio website to showcase projects, technical skills, certifications, achievements, and resume using modern HTML, CSS, and JavaScript with an interactive and mobile-friendly interface.
+                    </p>
 
-            <div class="certificate-card">
-                <div class="certificate-img"><i class="fas fa-award"></i></div>
-                <div class="certificate-content">
-                    <h3>MongoDB PHP Developer</h3>
-                    <p>MongoDB</p>
-                    <a href="image/mongoDB%20cer.jpeg" target="_blank">
-                        <img src="image/mongoDB%20cer.jpeg" alt="MongoDB Certificate" style="width: 100%; height: 100%; object-fit: contain;">
-                    </a>
-                    <p>Integrated MongoDB with PHP for web applications.</p>
-                </div>
-            </div>
-
-            <div class="certificate-card">
-                <div class="certificate-img"><i class="fas fa-award"></i></div>
-                <div class="certificate-content">
-                    <h3>Edunet AI</h3>
-                    <p>Edunet Foundation</p>
-                    <a href="image/edunet%20.jpeg" target="_blank">
-                        <img src="image/edunet%20.jpeg" alt="Edunet Certificate" style="width: 100%; height: 100%; object-fit: contain;">
-                    </a>
-                    <p>Learned Green Skills and Artificial Intelligence basics.</p>
-                </div>
-            </div>
-
-            <div class="certificate-card">
-                 <div class="certificate-img"><i class="fas fa-award"></i></div>
-                 <div class="certificate-content">
-                     <h3>IMAGE EDITING 101</h3>
-                     <p>GCFGlobal</p>
-                     <a href="image/imagedition.jpeg" target="_blank">
-                        <img src="image/imagedition.jpeg" alt="Image Editing Certificate" style="width: 150%; height: 150%; object-fit: contain;">
-                     </a>
-                     <p>Comprehensive tutorial for Image Editing 101 and digital creativity.</p>
-                 </div>
-            </div>
-
-            <div class="certificate-card">
-                <div class="certificate-img"><i class="fas fa-award"></i></div>
-                <div class="certificate-content">
-                    <h3>Android Course</h3>
-                    <p>Infosys Springboard</p>
-                    <a href="image/online%20andriod%20cer.jpeg" target="_blank">
-                        <img src="image/online%20andriod%20cer.jpeg" alt="Android Certificate" style="width: 100%; height: 100%; object-fit: contain;">
-                    </a>
-                    <p>Learned Android app development basics.</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Responsive Design</span>
+                    </div>
                 </div>
             </div>
 
         </div>
     </div>
 </section>
-
+ 
+    <!-- Certificates Section -->
+    <section id="certificates" class="certificates">
+        <div class="container">
+            <h2>CERTIFICATIONS</h2>
+ 
+            <!-- Achievements & Competition Wins -->
+            <div class="cert-subheading achievement">
+                <h3><i class="fas fa-trophy"></i> Achievements & Competition Wins</h3>
+                <div class="line"></div>
+            </div>
+            <div class="certificates-grid">
+ 
+                <div class="certificate-card is-achievement">
+                    <span class="cert-badge win">2st Prize</span>
+                    <div class="certificate-img">
+                        <a href="image/uiux.jpg" target="_blank">
+                            <img src="image/uiux.jpg"alt="UI UX Designing Certificate">
+                        </a>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>UI & UX Designing — Winner</h3>
+                        <p class="issuer">Dept. of Computer Science, Valluvar College of Science & Management (Autonomous)</p>
+                        <p class="cert-date">TechFrontiers 2026 · 24 February 2026</p>
+                        <p>Won 1st prize for UI/UX Designing at the TechFrontiers 2026 event, representing Chettinad College of Engineering.</p>
+                    </div>
+                </div>
+ 
+                <div class="certificate-card is-achievement">
+                    <span class="cert-badge win">3rd Prize</span>
+                    <div class="certificate-img">
+                        <a href="image/promtcraft.jpg" target="_blank">
+                            <img src="image/promtcraft.jpg" alt="Prompt Craft Certificate">
+                        </a>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Prompt Craft — Winner</h3>
+                        <p class="issuer">Dept. of Computer Science, Valluvar College of Science & Management (Autonomous)</p>
+                        <p class="cert-date">TechFrontiers 2026 · 24 February 2026</p>
+                        <p>Placed among the winners in the Prompt Craft competition at TechFrontiers 2026.</p>
+                    </div>
+                </div>
+ 
+                <div class="certificate-card is-achievement">
+                    <span class="cert-badge win">Participant</span>
+                    <div class="certificate-img">
+                        <a href="image/womenhackthon.jpg" target="_blank">
+                            <img src="image/womenhackthon.jpg" alt="Hackathon Certificate">
+                        </a>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>WWT All India Women Only Hackathon</h3>
+                        <p class="issuer">Shooting Stars Foundation × World Wide Technology</p>
+                        <p>Participated in an all-India women-only hackathon, building innovative solutions under time constraints.</p>
+                    </div>
+                </div>
+ 
+            </div>
+ 
+            <!-- Completion Certificates -->
+            <div class="cert-subheading completion">
+                <h3><i class="fas fa-certificate"></i> Completion Certificates</h3>
+                <div class="line"></div>
+            </div>
+            <div class="certificates-grid">
+ 
+                <div class="certificate-card is-completion">
+                    <span class="cert-badge done">Completed</span>
+                    <div class="certificate-img">
+                        <a href="image/inplain2.jpg" target="_blank">
+                        <img src="image/inplain2.jpg" alt="Inplant Training Certificate">    
+                        </a>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Inplant Training — Web Development</h3>
+                        <p class="issuer">CodeBind Technologies, Trichy</p>
+                        <p class="cert-date">08 June 2026 – 12 June 2026</p>
+                        <p>Completed hands-on inplant training in web development; performance rated Good by the training facilitator.</p>
+                    </div>
+                </div>
+ 
+                <div class="certificate-card is-completion">
+                    <span class="cert-badge done">Completed</span>
+                    <div class="certificate-img">
+                        <a href="image/inplain1.jpg" target="_blank">
+                            <img src="image/inplain1.jpg" alt="AI Workshop Certificate">
+                        </a>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Workshop on Artificial Intelligence</h3>
+                        <p class="issuer">CodeBind Technologies, Trichy</p>
+                        <p class="cert-date">12 June 2026</p>
+                        <p>Active participation in a one-day workshop on Artificial Intelligence.</p>
+                    </div>
+                </div>
+ 
+                <div class="certificate-card is-completion">
+                    <span class="cert-badge done">Completed</span>
+                    <div class="certificate-img">
+                        <a href="image/inplain3.jpg" target="_blank">
+                            <img src="image/inplain3.jpg" alt="Corporate Training Test Certificate">
+                        </a>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Corporate Training Test</h3>
+                        <p class="issuer">CodeBind Technologies, Trichy</p>
+                        <p class="cert-date">12 June 2026</p>
+                        <p>Completed a corporate training test based on placement aptitude questions.</p>
+                    </div>
+                </div>
+ 
+                <div class="certificate-card is-completion">
+                    <span class="cert-badge done">Completed</span>
+                    <div class="certificate-img">
+                        <a href="image/python.jpg" target="_blank">
+                            <img src="image/python.jpg" alt="Python Certificate">
+                        </a>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Python Fundamentals for Beginners</h3>
+                        <p class="issuer">Great Learning</p>
+                        <p class="cert-date">28 July 2025</p>
+                        <p>Comprehensive introduction to Python programming and its applications.</p>
+                    </div>
+                </div>
+ 
+                <div class="certificate-card is-completion">
+                    <span class="cert-badge done">Completed</span>
+                    <div class="certificate-img">
+                        <a href="image/vadafone.jpg" target="_blank">
+                            <img src="image/vadafone.jpg" alt="Phishing Certificate">
+                        </a>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Phishing Attacks</h3>
+                        <p class="issuer">Vodafone Idea Foundation (VOIS)</p>
+                        <p class="cert-date">18 July 2025</p>
+                        <p>Learned about phishing techniques and how to prevent cyber attacks.</p>
+                    </div>
+                </div>
+ 
+                <div class="certificate-card is-completion">
+                    <span class="cert-badge done">Completed</span>
+                    <div class="certificate-img">
+                        <a href="image/edunet.jpg" target="_blank">
+                            <img src="image/edunet.jpg" alt="Edunet Certificate">
+                        </a>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Green Skills & Artificial Intelligence</h3>
+                        <p class="issuer">Edunet Foundation × AICTE × Shell</p>
+                        <p class="cert-date">July 2025</p>
+                        <p>Foundation course on Green Skills and AI under the Skills4Future Program.</p>
+                    </div>
+                </div>
+ 
+                <div class="certificate-card is-completion">
+                    <span class="cert-badge done">Completed</span>
+                    <div class="certificate-img">
+                        <a href="image/mongodb.jpg" target="_blank">
+                            <img src="image/mongodb.jpg" alt="MongoDB Certificate">
+                        </a>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>MongoDB PHP Developer Path</h3>
+                        <p class="issuer">MongoDB</p>
+                        <p class="cert-date">27 December 2025</p>
+                        <p>Integrated MongoDB with PHP for web applications.</p>
+                    </div>
+                </div>
+ 
+                <div class="certificate-card is-completion">
+                    <span class="cert-badge done">Completed</span>
+                    <div class="certificate-img">
+                        <a href="image/android.jpg" target="_blank">
+                            <img src="image/android.jpg" alt="Android Certificate">
+                        </a>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Android Course</h3>
+                        <p class="issuer">Infosys Springboard</p>
+                        <p>Learned Android app development basics, scoring 86.67% in the final assessment.</p>
+                    </div>
+                </div>
+ 
+                <div class="certificate-card is-completion">
+                    <span class="cert-badge done">Completed</span>
+                    <div class="certificate-img">
+                        <a href="image/greenindia.jpg" target="_blank">
+                            <img src="image/greenindia.jpg" alt="Green India Certificate">
+                        </a>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Green India Mission Seminar</h3>
+                        <p class="issuer">The Institution of Engineers (India), Trichy Local Centre</p>
+                        <p class="cert-date">22–23 August 2025</p>
+                        <p>Presented a poster on Smart Irrigation Systems for sustainable water management.</p>
+                    </div>
+                </div>
+ 
+                <div class="certificate-card is-completion">
+                    <span class="cert-badge done">Completed</span>
+                    <div class="certificate-img">
+                        <a href="image/dca.jpg" target="_blank">
+                            <img src="image/dca.jpg" alt="DCA Certificate">
+                        </a>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Diploma in Computer Application</h3>
+                        <p class="issuer">Gramium Institute of Computer Education</p>
+                        <p class="cert-date">10 March 2024 – 13 September 2024</p>
+                        <p>Learned MS Word, Excel, PowerPoint and basic computer skills. Secured 1st Class.</p>
+                    </div>
+                </div>
+ 
+                <div class="certificate-card is-completion">
+                    <span class="cert-badge done">Completed</span>
+                    <div class="certificate-img">
+                        <a href="image/creative.jpg" target="_blank">
+                            <img src="image/creative.jpg" alt="Creativity Certificate">
+                        </a>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Creativity Tutorial</h3>
+                        <p class="issuer">GCFGlobal</p>
+                        <p class="cert-date">31 December 2025</p>
+                        <p>Improved creativity and idea generation skills.</p>
+                    </div>
+                </div>
+ 
+                <div class="certificate-card is-completion">
+                    <span class="cert-badge done">Completed</span>
+                    <div class="certificate-img">
+                        <a href="image/graphdesign.jpg" target="_blank">
+                            <img src="image/graphdesign.jpg" alt="Graphic Design Certificate">
+                        </a>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Graphic Design Basics</h3>
+                        <p class="issuer">Mind Luster</p>
+                        <p class="cert-date">31 December 2025</p>
+                        <p>Learned the basics of graphic design and visual creativity.</p>
+                    </div>
+                </div>
+ 
+                <div class="certificate-card is-completion">
+                    <span class="cert-badge done">Completed</span>
+                    <div class="certificate-img">
+                        <a href="image/imagedit.jpg" target="_blank">
+                            <img src="image/imagedit.jpg" alt="Image Editing Certificate">
+                        </a>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Image Editing 101</h3>
+                        <p class="issuer">GCFGlobal</p>
+                        <p class="cert-date">31 December 2025</p>
+                        <p>Comprehensive self-paced tutorial for image editing and digital creativity.</p>
+                    </div>
+                </div>
+ 
+            </div>
+        </div>
+    </section>
+ 
     <!-- Resume Section -->
     <section id="resume" class="resume">
         <div class="container">
             <h2>Resume</h2>
-            <div class="resume-content">
-                <div class="resume-left">
-                    <div class="resume-section">
-                        <h3>Education</h3>
-                        <div class="resume-item">
-                            <h3>Bachelor of Information Technology</h3>
-                            <div class="date">2021 - Present</div>
-                            <p>Anna University , chennai , TamilNadu</p>
-                            <p>Current GPA: 8.29</p>
-                            <p>Relevant Coursework: Data Structures, Algorithms, cloud security, Database Systems, Software Engineering</p>
-                        </div>
-                        <div class="resume-item">
-                            <h3>High School</h3>
-                            <div class="date">2019 - 2021</div>
-                            <p>Govt ADW high secondary school, kulithalai , TamilNadu</p>
-                            <p>Focus: Science and Mathematics</p>
-                        </div>
-                    </div>
-                    <div class="resume-section">
-                        <h3>Skills</h3>
-                        <div class="resume-item">
-                            <h3>Programming Languages</h3>
-                            <p>Python, Java , C , HTML/CSS</p>
-                        </div>
-                        <div class="resume-item">
-                            <h3>Tools & Technologies</h3>
-                            <p>Git, GitHub, VS Code, MSword , Excel , power point , canva , chatGPT</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="resume-right">
-                    <div class="resume-section">
-                        <h3>Projects</h3>
-                        <div class="resume-item">
-                            <h3>Portfolio Website</h3>
-                            <div class="date">2023</div>
-                            <p>Designed and developed a responsive portfolio website to showcase projects and skills.</p>
-                        </div>
-                        <div class="resume-item">
-                            <h3>Product Recommendation System</h3>
-                            <div class="date">2022</div>
-                            <p>A Machine Learning-Based System That Recommends Product Based On User Interest And Interactions.</p>
-                        </div>
-                        </div>
-             <div class="resume-section">
-                  <h3>Certifications</h3>
-                   <div class="resume-section">
-                   <div class="resume-item">
-                   <h3>Python Programming</h3>
-                   <p>GreatLearning</p>
-             </div>
-
-             <div class="resume-item">
-                  <h3>Phishing Attacks</h3>
-                  <p>Vodafone Idea Foundation</p>
-             </div>
-
-             <div class="resume-item">
-                <h3>Diploma in Computer Application</h3>
-                <p>Gramimum Institute</p>
-              </div>
-
-             <div class="resume-item">
-                <h3>Green India Mission</h3>
-                <p>Institution of Engineering</p>
-             </div>
-
-             <div class="resume-item">
-                <h3>Women Hackathon</h3>
-                <p>Shooting Stars Foundation</p>
-             </div>
+            <p class="resume-intro">A snapshot of my education, technical toolkit, projects, and the recognitions I've earned along the way.</p>
  
-             <div class="resume-item">
-                <h3>Creativity Tutorial</h3>
-                <p>GCFGlobal</p>
-             </div>
-
-           <div class="resume-item">
-                <h3>Graphic Design Basics</h3>
-                <p>Mind Luster</p>
-           </div>
-
-          <div class="resume-item">
-                <h3>MongoDB Developer Path</h3>
-                <p>MongoDB</p>
-           </div>
-
-            <div class="resume-item">
-                <h3>Green Skills & AI</h3>
-                <p>Edunet Foundation</p>
-             </div>
-
-            <div class="resume-item">
-                <h3>Android Course</h3>
-                <p>Infosys Springboard</p>
-            </div>
-
+            <div class="resume-content">
+                <!-- LEFT COLUMN -->
+                <div class="resume-col-left">
+ 
+                    <div class="resume-panel">
+                        <div class="resume-panel-title"><i class="fas fa-graduation-cap"></i> Education</div>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <span class="t-date">2024 – 2028</span>
+                                <h4>Bachelor of Technology, Information Technology</h4>
+                                <div class="t-org">Chettinad College of Engineering, Tamil Nadu</div>
+                                <p>Current GPA: 8.29</p>
+                                <p>Coursework: Data Structures, Algorithms, Cloud Security, Database Systems, Software Engineering</p>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="t-date">2019 – 2021</span>
+                                <h4>HSC & SSLC</h4>
+                                <div class="t-org">Govt ADW Higher Secondary School, Kulithalai, Tamil Nadu</div>
+                                <p>Focus: Science and Mathematics</p>
+                            </div>
+                        </div>
                     </div>
+ 
+                    <div class="resume-panel">
+                        <div class="resume-panel-title"><i class="fas fa-layer-group"></i> Skills & Proficiencies</div>
+                        <div class="skill-pill-group">
+                            <div class="pill-label">Programming Languages</div>
+                            <div class="pill-row">
+                                <span class="pill">Python</span>
+                                <span class="pill">C</span>
+                            </div>
+                        </div>
+                        <div class="skill-pill-group">
+                            <div class="pill-label">Web Technologies</div>
+                            <div class="pill-row">
+                                <span class="pill">HTML</span>
+                                <span class="pill">CSS</span>
+                                <span class="pill">JavaScript (Basic)</span>
+                            </div>
+                        </div>
+                        <div class="skill-pill-group">
+                            <div class="pill-label">Database</div>
+                            <div class="pill-row">
+                                <span class="pill">MySQL (Basic)</span>
+                            </div>
+                        </div>
+                        <div class="skill-pill-group">
+                            <div class="pill-label">Tools & Platforms</div>
+                            <div class="pill-row">
+                                <span class="pill">Git</span>
+                                <span class="pill">GitHub</span>
+                                <span class="pill">VS Code</span>
+                                <span class="pill">Google Colab</span>
+                            </div>
+                        </div>
+                        <div class="skill-pill-group">
+                            <div class="pill-label">AI & ML</div>
+                            <div class="pill-row">
+                                <span class="pill">TensorFlow (Learning)</span>
+                                <span class="pill">Machine Learning Fundamentals</span>
+                                <span class="pill">Deep Learning Fundamentals</span>
+                            </div>
+                        </div>
+                        <div class="skill-pill-group">
+                            <div class="pill-label">Areas of Interest</div>
+                            <div class="pill-row">
+                                <span class="pill">Artificial Intelligence</span>
+                                <span class="pill">Cybersecurity</span>
+                                <span class="pill">Web Development</span>
+                                <span class="pill">Deepfake Detection</span>
+                            </div>
+                        </div>
                     </div>
+ 
+                </div>
+ 
+                <!-- RIGHT COLUMN -->
+                <div class="resume-col-right">
+ 
+                    <div class="resume-panel">
+                        <div class="resume-panel-title"><i class="fas fa-diagram-project"></i> Projects</div>
+ 
+                        <div class="resume-project">
+                            <h4>Product Recommendation System <span>Python · ML · Scikit-learn · Streamlit · Pandas</span></h4>
+                            <p>Machine learning based recommendation system suggesting products from user behavior, with collaborative and content-based filtering.</p>
+                        </div>
+ 
+                        <div class="resume-project">
+                            <h4>CyberShield — Web Vulnerability Scanner <span>Python · Flask · SQL · HTML/CSS/JS</span></h4>
+                            <p>Scanner detecting SQL Injection, XSS, and open ports, with detailed reports and a security-awareness dashboard.</p>
+                        </div>
+ 
+                        <div class="resume-project">
+                            <h4>AI-Based Deepfake Detection System <span>Python · TensorFlow · OpenCV · Flask</span></h4>
+                            <p>Web-based system for detecting manipulated images and video, architected to support live webcam analysis, voice-clone detection, and KYC verification.</p>
+                        </div>
+ 
+                        <div class="resume-project">
+                            <h4>Personal Portfolio Website <span>HTML · CSS · JavaScript</span></h4>
+                            <p>Responsive portfolio showcasing projects, certifications, and skills with mobile-friendly navigation.</p>
+                        </div>
+                    </div>
+ 
+                    <div class="resume-panel">
+                        <div class="resume-panel-title gold"><i class="fas fa-trophy"></i> Achievements</div>
+ 
+                        <div class="achievement-badge">
+                            <i class="fas fa-medal"></i>
+                            <div>
+                                <h4>Winner — UI/UX Design Competition</h4>
+                                <p>TechFrontiers 2026, Valluvar College of Science and Management</p>
+                            </div>
+                        </div>
+ 
+                        <div class="achievement-badge">
+                            <i class="fas fa-medal"></i>
+                            <div>
+                                <h4>Prize Winner — Prompt Craft</h4>
+                                <p>TechFrontiers 2026, Valluvar College of Science and Management</p>
+                            </div>
+                        </div>
+ 
+                        <div class="achievement-badge">
+                            <i class="fas fa-star"></i>
+                            <div>
+                                <h4>Multiple certifications completed</h4>
+                                <p>Artificial Intelligence, Programming, and Emerging Technologies</p>
+                            </div>
+                        </div>
+ 
+                        <div class="achievement-badge">
+                            <i class="fas fa-star"></i>
+                            <div>
+                                <h4>Active participant</h4>
+                                <p>Technical workshops, hackathons, and skill development programs</p>
+                            </div>
+                        </div>
+                    </div>
+ 
+                    <div class="resume-panel">
+                        <div class="resume-panel-title"><i class="fas fa-certificate"></i> Certifications</div>
+                        <ul class="cert-mini-list">
+                            <li><i class="fas fa-circle"></i> <b>Inplant Training</b> — CodeBind Technologies</li>
+                            <li><i class="fas fa-circle"></i> <b>Prompt Craft</b> — TechFrontiers 2026</li>
+                            <li><i class="fas fa-circle"></i> <b>Python Programming</b> — Great Learning</li>
+                            <li><i class="fas fa-circle"></i> <b>Creativity Tutorial</b> — GCFGlobal</li>
+                            <li><i class="fas fa-circle"></i> <b>Phishing Attacks Awareness</b> — VOIS</li>
+                            <li><i class="fas fa-circle"></i> <b>Graphic Design Basics</b> — MindLuster</li>
+                            <li><i class="fas fa-circle"></i> <b>Diploma in Computer Applications</b> — Gramium Institute</li>
+                            <li><i class="fas fa-circle"></i> <b>MongoDB Developer Path</b> — MongoDB</li>
+                            <li><i class="fas fa-circle"></i> <b>Green India Mission</b> — Institution of Engineers</li>
+                            <li><i class="fas fa-circle"></i> <b>Green Skills & AI</b> — Edunet Foundation</li>
+                            <li><i class="fas fa-circle"></i> <b>Women Hackathon</b> — Shooting Stars Foundation</li>
+                            <li><i class="fas fa-circle"></i> <b>Android Course Assessment</b> — Infosys Springboard</li>
+                        </ul>
+                    </div>
+ 
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="#" class="btn">Download PDF Resume</a>
+ 
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="#" class="btn"><i class="fas fa-download" style="margin-right:8px;"></i>Download PDF Resume</a>
             </div>
         </div>
     </section>
-
+ 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Get In Touch</h3>
-                    <p>I'm always open to discussing new opportunities, collaborations, or just having a friendly chat about technology and development.</p>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>abinayavaratharajan03@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>+91 9629661715</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Location</h4>
-                            <p>Kulithalai, Tamil Nadu</p>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+    <!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="container">
+        <h2>Contact Me</h2>
+
+        <div class="contact-content">
+
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+
+                <p>
+                    I'm always open to discussing new opportunities,
+                    collaborations, or technology-related projects.
+                </p>
+
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>abinayavaratharajan03@gmail.com</p>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" class="form-control" placeholder="Enter subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" class="form-control" placeholder="Enter your message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
+
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>+91 9629661715</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Location</h4>
+                        <p>Kulithalai, Tamil Nadu</p>
+                    </div>
+                </div>
+
+                <div class="social-links">
+
+                    <a href="https://github.com/abinayavaratharajan03-svg/abinaya-" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/abinaya-varatharajan-5b9291368" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+
                 </div>
             </div>
-        </div>
-    </section>
 
+            <!-- Contact Form -->
+            <div class="contact-form">
+
+                <form action="https://formsubmit.co/abinayavaratharajan03@gmail.com" method="POST">
+
+                    <!-- Hidden Settings -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_subject" value="New Portfolio Contact Message">
+                    <input type="hidden" name="_template" value="table">
+
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" name="Name" class="form-control" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Your Email</label>
+                        <input type="email" name="Email" class="form-control" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Subject</label>
+                        <input type="text" name="Subject" class="form-control" placeholder="Enter subject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Your Message</label>
+                        <textarea name="Message" class="form-control" rows="6" placeholder="Enter your message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+ 
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1100,34 +1736,34 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2024 Abinaya. All Rights Reserved.</p>
+                <p>&copy; 2026 Abinaya. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
-
+ 
     <script>
         // Mobile menu toggle
         document.querySelector('.menu-toggle').addEventListener('click', function() {
             document.querySelector('.nav-links').classList.toggle('active');
         });
-
+ 
         // Close mobile menu when clicking on a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 document.querySelector('.nav-links').classList.remove('active');
             });
         });
-
+ 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
+ 
                 const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
+                if (targetId === '#') return;
+ 
                 const targetElement = document.querySelector(targetId);
-                if(targetElement) {
+                if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
@@ -1135,68 +1771,47 @@
                 }
             });
         });
-
+ 
         // Contact form submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // Get form values
+ 
             const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            // In a real application, you would send this data to a server
-            // For this example, we'll just show an alert
+ 
+            // NOTE: replace this with your real backend endpoint before going live.
+            // The alert below is a placeholder so the form works even without a server.
             alert(`Thank you for your message, ${name}! I'll get back to you soon.`);
-            
-            // Reset form
+ 
             this.reset();
         });
-
-        // Add active class to current section in navigation
+ 
+        // Highlight the active section link while scrolling
         window.addEventListener('scroll', function() {
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('.nav-links a');
-            
+ 
             let current = '';
-            
+ 
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if(scrollY >= (sectionTop - 100)) {
+                if (scrollY >= (sectionTop - 100)) {
                     current = section.getAttribute('id');
                 }
             });
-            
+ 
             navLinks.forEach(link => {
                 link.classList.remove('active');
-                if(link.getAttribute('href').substring(1) === current) {
+                if (link.getAttribute('href').substring(1) === current) {
                     link.classList.add('active');
                 }
             });
         });
     </script>
-    
-
-    <script>
-    document.getElementById("myForm").addEventListener("submit", function(e){
-        e.preventDefault();
-
-        let name = document.getElementById("name").value;
-
-        fetch("http://localhost:5000/api/save", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ username: name })
-        })
-        .then(res => res.json())
-        .then(data => alert(data.message));
-    });
-    </script>
-
-
 </body>
 </html>
+ 
+
+
+
+
+
